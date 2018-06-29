@@ -1,4 +1,0 @@
-# dockerfiles
-保存构建docker镜像过程中用到的Dockerfile
-## java8
-基于centos构建java8 docker镜像
