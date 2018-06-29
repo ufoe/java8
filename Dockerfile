@@ -10,11 +10,11 @@ RUN yum -y update \
 	&& /bin/cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
 	&& echo 'Asia/Shanghai' > /etc/timezone
 #设置jdk环境变量	
-ENV LANG zh_CN.UTF-8
-ENV LC_ALL zh_CN.UTF-8
-ENV JAVA_HOME /usr/java/jdk1.8.0_172
-ENV JRE_HOME /usr/java/jdk1.8.0_172/jre
-ENV PATH $PATH:$JAVA_HOME/bin:$JRE_HOME/bin
-ENV CLASSPATH .:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar:$JRE_HOME/lib
+ENV LANG zh_CN.UTF-8 \
+ LC_ALL zh_CN.UTF-8 \
+ JAVA_HOME /usr/java/jdk1.8.0_172 \
+ JRE_HOME /usr/java/jdk1.8.0_172/jre \
+ PATH $PATH:$JAVA_HOME/bin:$JRE_HOME/bin \
+ CLASSPATH .:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar:$JRE_HOME/lib
 
 CMD ["java -version"]
