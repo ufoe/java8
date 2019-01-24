@@ -8,7 +8,9 @@ RUN yum -y update \
     && yum -y install kde-l10n-Chinese && yum -y reinstall glibc-common \
     && localedef -c -f UTF-8 -i zh_CN zh_CN.UTF-8 \
 	&& /bin/cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
-	&& echo 'Asia/Shanghai' > /etc/timezone
+	&& echo 'Asia/Shanghai' > /etc/timezone \
+        && yum clean all \
+        && rm -rf /var/cache/yum/*
 #设置jdk环境变量	
 ENV LANG zh_CN.UTF-8 \
  LC_ALL zh_CN.UTF-8 \
